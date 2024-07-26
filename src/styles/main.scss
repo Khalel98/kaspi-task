@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$white: #ffffff;
+$green: #5db075;
+$grey: #666666;
+$grey-light: #f6f6f6;
+$orange: #ffb84e;
+$black: #000000;
+
+// Переменные для блока
+$minWidth: 320px;
+$maxWidth: 1152px;
+$maxWidthCon: 1144px;
+$md1: $maxWidthCon + 12;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: $white;
+}
+
+.section__loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+// SECTION HEADER
+.section__header {
+  background: $white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  &__link {
+    font-size: 16px;
+    font-weight: 500;
+    color: $green;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &.profile {
+    background: $green;
+    .section__header__title {
+      color: $white;
+    }
+    .section__header__link {
+      color: $white;
+    }
+  }
+
+  .section__header__back {
+    text-align: left;
+  }
+  .section__header__forward {
+    text-align: right;
+  }
+}
+
+// SECTION AUTHORIZATION
+.section__auth {
+  height: calc(100vh - 77px);
+  position: relative;
+
+  &__checkbox {
+    font-size: 14px;
+    font-weight: 400;
+    color: $black;
+    @media (max-width: 563px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__password {
+    position: relative;
+    .v-input__append {
+      height: 56px;
+      right: 16px;
+      position: absolute;
+    }
+    &__action {
+      font-size: 16px;
+      font-weight: 500;
+      color: $green !important;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  &__submit {
+    position: absolute;
+    bottom: 16px;
+    width: 100%;
+
+    &__btn.v-btn {
+      width: 100%;
+      height: 51px !important;
+      font-size: 16px;
+      font-weight: 600;
+      color: $white;
+      border-radius: 100px;
+      text-transform: none;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0;
+      background: $green;
+    }
+    &__link {
+      margin-top: 16px;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: $green;
+      cursor: pointer;
+    }
+  }
+
+  .v-field {
+    background: $grey-light !important;
+  }
+
+  .v-field-label {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+  }
+}
+
+// SECTION FEED
+.section__feed {
+  &__column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 16px;
+    &__img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+    }
+    &__banner {
+      width: 50px;
+      height: 50px;
+      background: #f6f6f6;
+      border-radius: 8px;
+    }
+    &__content {
+      border-bottom: 1px solid #e8e8e8;
+      padding-bottom: 16px;
+      &__header {
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        gap: 16px;
+        margin-bottom: 5px;
+      }
+      &__title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        color: $black;
+      }
+      &__date {
+        font-size: 14px;
+        font-weight: 400;
+        color: #bdbdbd;
+      }
+      &__body {
+        font-size: 14px;
+        font-weight: 400;
+        color: $black;
+        line-height: 17px;
+      }
+    }
+  }
+  &__search {
+    background: $grey-light;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// SECTION CONTENT
+.section__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  &__banner {
+    background: #f6f6f6;
+    border-radius: 8px;
+    width: 100%;
+    height: 196px;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &__author {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__body {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: $grey;
+  }
+}
+
+// SECTION PROFILE
+.section__profile {
+  &__switch {
+    position: relative;
+    height: 105px;
+  }
+  &__header {
+    margin-top: -16px;
+    margin-left: -16px;
+    background: $green;
+    height: 120px;
+    width: calc(100% + 32px);
+    position: relative;
+    &__img {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      width: 154px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      object-fit: cover;
+      background: #ffffff;
+      transform: translateX(-50%);
+    }
+  }
+  &__name {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__email {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &__content {
+    margin-top: 66px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.v-toolbar {
+  max-width: 600px !important;
+  left: auto !important;
+  background: transparent !important;
+}
+.v-app-bar.v-toolbar:not(.v-toolbar--flat) {
+  box-shadow: none !important;
+}
+
+.main__layout {
+  overflow: scroll !important;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.navigation__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+
+  &__navigation {
+    width: 32px;
+    height: 32px;
+    background: #e8e8e8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $grey;
+    &.active {
+      background: $green;
+      color: $white;
+    }
+  }
+}
+
+.main__layout::-webkit-scrollbar {
+  display: none !important;
+}
+
+.v-bottom-navigation {
+  max-width: 600px !important;
+  left: auto !important;
+  height: 83px !important;
+  background: #fafafa;
+  box-shadow: none !important;
+  border-top: 1px solid #e8e8e8 !important;
+}
